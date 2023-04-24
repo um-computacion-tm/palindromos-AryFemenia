@@ -1,17 +1,31 @@
 import unittest
 from palindrome import palindrome
 
-#class TestFibo(unittest.Testcase):
-#    def test1(self):
-#        self.assertEqual(1, fibonacci(1))
+class TestPalindromo(unittest.TestCase):
 
-class TestPalindromo(unittest.Testcase):
-    def test_palindrome_simple(self):
+    def test_palindrome_1(self):
         result = palindrome('neuquen')
+        self.assertEqual(result, True)        
+
+    def test_palindrome_2(self):
+        result = palindrome('ala')
         self.assertEqual(result, True)
-    def test_palindrome_simple(self):
-        result = palindrome('neuquen')
+
+    def test_palindrome_3(self):
+        result = palindrome('nadan')
         self.assertEqual(result, True)
+
+    def test_palindrome_4(self):
+        result = palindrome('ary')
+        self.assertEqual(result, False)
+
+    def test_palindrome_5(self):
+        result = palindrome('otto')
+        self.assertEqual(result, True)
+
+    def test_palindrome_6(self):
+        result = palindrome('electrocardiograma')
+        self.assertEqual(result, False)
 
 if __name__ == '__main__':
     unittest.main()
